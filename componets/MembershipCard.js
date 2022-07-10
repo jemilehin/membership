@@ -1,15 +1,15 @@
 
-import { View, Text, StyleSheet, PixelRatio, ImageBackground, TouchableOpacity, Dimensions } from "react-native";
-
+import {View, Text, StyleSheet, PixelRatio, ImageBackground, TouchableOpacity, Dimensions } from "react-native";
 const MembershipCard = ({ data, direction }) => {
+
     return (
-        <View style={[styles.itemholder, { flexDirection: direction,}]}>
+        <View style={[styles.itemholder, { flexDirection: direction, maxWidth: direction === "row" ? "50%" : null}]}>
             {data.map((item, index) => {
                 if (direction === 'row') {
                     return (
-                    <View style={{
-                        
-                        width: "50%", padding:PixelRatio.getPixelSizeForLayoutSize(2)}}
+                    <View style={[{
+                        maxWidth:"70%" , padding:PixelRatio.getPixelSizeForLayoutSize(2),
+                    }]}
                         key={index}
                     >
                     <ImageBackground
